@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 480px) {
+    html {
+      font-size: 45%; } }
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  display: grid;
+  justify-content: center; }
+
+.main {
+  margin-top: 7.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  justify-items: center; }
+  .main .heading {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: #969696;
+    margin-top: 3rem;
+    text-align: center; }
+    .main .heading span {
+      color: #151f29;
+      font-weight: 700; }
+  .main .subs {
+    font-size: 2rem; }
+  .main .form {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative; }
+    @media only screen and (max-width: 700px) {
+      .main .form {
+        width: 80vw; } }
+    .main .form p {
+      font-size: 1.4rem;
+      font-style: italic;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(2rem, 150%);
+      display: none;
+      color: #ff5263; }
+      @media only screen and (max-width: 700px) {
+        .main .form p {
+          position: static;
+          transform: translate(0);
+          order: 1;
+          margin-top: -1rem;
+          margin-bottom: 3rem; } }
+    .main .form .input {
+      width: 45rem;
+      border-radius: 10rem;
+      font-size: inherit;
+      padding: 1rem 3rem;
+      border: 1px solid #c2d3ff;
+      margin-right: 2rem;
+      transition: all 0.3s;
+      color: #4f7df3; }
+      @media only screen and (max-width: 700px) {
+        .main .form .input {
+          height: 6rem;
+          margin-right: 0;
+          margin-bottom: 2rem;
+          width: 100%; } }
+      .main .form .input::placeholder {
+        font-weight: 300;
+        color: #c2d3ff; }
+      .main .form .input:focus {
+        outline: none;
+        border: 1px solid #4f7df3; }
+    .main .form .btn {
+      font-family: inherit;
+      border-radius: 10rem;
+      font-size: inherit;
+      padding: 2rem 6rem;
+      background-color: #4f7df3;
+      color: white;
+      border: none;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer; }
+      @media only screen and (max-width: 700px) {
+        .main .form .btn {
+          width: 100%;
+          order: 2; } }
+      .main .form .btn::before {
+        content: "";
+        height: 100%;
+        width: 4rem;
+        position: absolute;
+        left: 0rem;
+        top: 0;
+        background-color: #fff1;
+        transform: translateX(-200%) skewX(-45deg);
+        transition: all 0.3s; }
+      .main .form .btn:hover::before, .main .form .btn:focus::before {
+        left: 80%;
+        transform: translateX(0) skewX(-45deg); }
+        @media only screen and (max-width: 700px) {
+          .main .form .btn:hover::before, .main .form .btn:focus::before {
+            transform: translateX(0) skewX(-45deg); } }
+      .main .form .btn:focus, .main .form .btn:hover {
+        outline: none;
+        box-shadow: 0 0 1rem #969696; }
+      .main .form .btn:active {
+        transform: translateY(0px); }
+  .main .dashboard {
+    margin-top: 7rem;
+    max-width: 60rem; }
+    @media only screen and (max-width: 700px) {
+      .main .dashboard {
+        width: 80vw; } }
+  .main .icons {
+    margin-top: 5rem;
+    font-size: 1.6rem;
+    display: flex;
+    width: 15rem;
+    justify-content: space-evenly; }
+    @media only screen and (max-width: 700px) {
+      .main .icons {
+        margin-top: 20vh; } }
+    .main .icons a {
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      text-decoration: none;
+      border: 1px solid rgba(150, 150, 150, 0.5);
+      color: #4f7df3;
+      transition: all 0.2s ease-in-out; }
+      .main .icons a:hover, .main .icons a:focus {
+        color: white;
+        background-color: #4f7df3;
+        outline: none; }
+  .main .copy {
+    font-size: 1.1rem;
+    color: #969696;
+    margin-top: 1rem;
+    margin-bottom: 2rem; }

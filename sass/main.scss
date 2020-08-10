@@ -1,0 +1,195 @@
+// ## Colors
+
+// ### Primary
+
+$Blue: hsl(223, 87%, 63%);
+
+// ### Secondary
+
+$Pale-Blue: hsl(223, 100%, 88%);
+$Light-Red: hsl(354, 100%, 66%);
+
+// ### Neutral
+
+$Gray: hsl(0, 0%, 59%);
+$Very-Dark-Blue: hsl(209, 33%, 12%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: 480px) {
+    font-size: 45%;
+  }
+}
+body {
+  font-family: "Libre Franklin", sans-serif;
+  display: grid;
+  justify-content: center;
+}
+.main {
+  margin-top: 7.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  justify-items: center;
+
+  .heading {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: $Gray;
+    margin-top: 3rem;
+    text-align: center;
+
+    span {
+      color: $Very-Dark-Blue;
+      font-weight: 700;
+    }
+  }
+  .subs {
+    font-size: 2rem;
+  }
+  .form {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    @media only screen and (max-width: 700px) {
+      width: 80vw;
+    }
+    p {
+      font-size: 1.4rem;
+      font-style: italic;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(2rem, 150%);
+      display: none;
+      color: $Light-Red;
+      @media only screen and (max-width: 700px) {
+        position: static;
+        transform: translate(0);
+        order: 1;
+        margin-top: -1rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .input {
+      width: 45rem;
+      border-radius: 10rem;
+      font-size: inherit;
+      padding: 1rem 3rem;
+      border: 1px solid $Pale-Blue;
+      margin-right: 2rem;
+      transition: all 0.3s;
+      color: $Blue;
+      @media only screen and (max-width: 700px) {
+        height: 6rem;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      &::placeholder {
+        font-weight: 300;
+        color: $Pale-Blue;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid $Blue;
+      }
+    }
+    .btn {
+      font-family: inherit;
+      border-radius: 10rem;
+      font-size: inherit;
+      padding: 2rem 6rem;
+      background-color: $Blue;
+      color: white;
+      border: none;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+        order: 2;
+      }
+      &::before {
+        content: "";
+        height: 100%;
+        width: 4rem;
+        position: absolute;
+        left: 0rem;
+        top: 0;
+        background-color: #fff1;
+        transform: translateX(-200%) skewX(-45deg);
+        transition: all 0.3s;
+      }
+      &:hover::before,
+      &:focus::before {
+        left: 80%;
+        transform: translateX(0) skewX(-45deg);
+        @media only screen and (max-width: 700px) {
+          transform: translateX(0) skewX(-45deg);
+        }
+      }
+      &:focus,
+      &:hover {
+        outline: none;
+        box-shadow: 0 0 1rem $Gray;
+      }
+      &:active {
+        transform: translateY(0px);
+      }
+    }
+  }
+  .dashboard {
+    margin-top: 7rem;
+    max-width: 60rem;
+    @media only screen and (max-width: 700px) {
+      width: 80vw;
+    }
+  }
+  .icons {
+    margin-top: 5rem;
+    font-size: 1.6rem;
+    display: flex;
+    width: 15rem;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 700px) {
+      margin-top: 20vh;
+    }
+    a {
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      text-decoration: none;
+      border: 1px solid rgba($Gray, 0.5);
+      color: $Blue;
+      transition: all 0.2s ease-in-out;
+      &:hover,
+      &:focus {
+        color: white;
+        background-color: $Blue;
+        outline: none;
+      }
+    }
+  }
+  .copy {
+    font-size: 1.1rem;
+    color: $Gray;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
